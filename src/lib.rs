@@ -22,3 +22,10 @@ pub fn log (inpt :&str) {
     }
 }
 
+pub fn elog (inpt :&str) {
+    let opt = Opt::from_args();
+    if opt.verbose {
+        let time = Local::now();
+        eprintln!("{}:\t{}", time.format("%X"), inpt);
+    }
+}
