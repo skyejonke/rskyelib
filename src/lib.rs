@@ -14,7 +14,7 @@ struct Opt {
     verbose :bool,
 }
 // This will print a log, with the current time, of whatever string you give it. This is only true if it uses the -v or --verbose argument.
-pub fn log (inpt :String) {
+pub fn log (inpt :&str) {
     let opt = Opt::from_args();
     if opt.verbose {
         let time = Local::now();
